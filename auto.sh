@@ -116,7 +116,7 @@ done
 echo "所有ASN数据提取完毕，并已保存到 $output_file"
 
 echo "开始检测 AS$asns TCP端口 $ports 有效性"
-./masscan -p $ports -iL $output_file --wait=3 --rate=30000 -oL data.txt --interface $Interface
+./masscan -p $ports -iL $output_file --wait=3 --rate=3000000 -oL data.txt --interface $Interface
 if [ $(grep masscan data.txt | wc -l) == 0 ]
 then
 	echo "没有TCP端口可用的IP"
